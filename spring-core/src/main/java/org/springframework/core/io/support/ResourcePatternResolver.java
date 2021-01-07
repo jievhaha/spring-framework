@@ -16,10 +16,10 @@
 
 package org.springframework.core.io.support;
 
-import java.io.IOException;
-
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
+
+import java.io.IOException;
 
 /**
  * Strategy interface for resolving a location pattern (for example,
@@ -60,6 +60,7 @@ public interface ResourcePatternResolver extends ResourceLoader {
 	 * for example in the root of all deployed JAR files.
 	 * @see org.springframework.core.io.ResourceLoader#CLASSPATH_URL_PREFIX
 	 */
+	//注：默认是"classpath:";
 	String CLASSPATH_ALL_URL_PREFIX = "classpath*:";
 
 	/**
@@ -71,6 +72,7 @@ public interface ResourcePatternResolver extends ResourceLoader {
 	 * @return the corresponding Resource objects
 	 * @throws IOException in case of I/O errors
 	 */
+	//注：父类是getResource
 	Resource[] getResources(String locationPattern) throws IOException;
 
 }
