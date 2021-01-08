@@ -651,14 +651,18 @@ public class BeanDefinitionParserDelegate {
 	 */
 	public void parseMetaElements(Element ele, BeanMetadataAttributeAccessor attributeAccessor) {
 		NodeList nl = ele.getChildNodes();
+		// 遍历子节点
 		for (int i = 0; i < nl.getLength(); i++) {
 			Node node = nl.item(i);
+			//例：// <meta key="special-data" value="sprecial stragey" />
 			if (isCandidateElement(node) && nodeNameEquals(node, META_ELEMENT)) {
 				Element metaElement = (Element) node;
 				String key = metaElement.getAttribute(KEY_ATTRIBUTE);
 				String value = metaElement.getAttribute(VALUE_ATTRIBUTE);
+				// 创建 BeanMetadataAttribute 对象
 				BeanMetadataAttribute attribute = new BeanMetadataAttribute(key, value);
 				attribute.setSource(extractSource(metaElement));
+				// 添加到 BeanMetadataAttributeAccessor 中
 				attributeAccessor.addMetadataAttribute(attribute);
 			}
 		}
@@ -736,13 +740,17 @@ public class BeanDefinitionParserDelegate {
 	public void parseLookupOverrideSubElements(Element beanEle, MethodOverrides overrides) {
 		NodeList nl = beanEle.getChildNodes();
 		for (int i = 0; i < nl.getLength(); i++) {
+			// 遍历子节点
 			Node node = nl.item(i);
 			if (isCandidateElement(node) && nodeNameEquals(node, LOOKUP_METHOD_ELEMENT)) {
 				Element ele = (Element) node;
-				String methodName = ele.getAttribute(NAME_ATTRIBUTE);
-				String beanRef = ele.getAttribute(BEAN_ELEMENT);
+				String methodName = ele.getAttribute(NAME_ATTRIBUTE);//name属性，指定了要返回指定类型对象的抽象方法
+				String beanRef = ele.getAttribute(BEAN_ELEMENT);//bean属性，指定了抽象方法要返回的对象的具体类型
+				// 创建 LookupOverride 对象
 				LookupOverride override = new LookupOverride(methodName, beanRef);
+				//设置数据源配置文件，对象的确切类型取决于配置文件的配置机制
 				override.setSource(extractSource(ele));
+				// 添加到 MethodOverrides 中
 				overrides.addOverride(override);
 			}
 		}
@@ -753,23 +761,26 @@ public class BeanDefinitionParserDelegate {
 	 */
 	public void parseReplacedMethodSubElements(Element beanEle, MethodOverrides overrides) {
 		NodeList nl = beanEle.getChildNodes();
+		// 遍历子节点
 		for (int i = 0; i < nl.getLength(); i++) {
 			Node node = nl.item(i);
 			if (isCandidateElement(node) && nodeNameEquals(node, REPLACED_METHOD_ELEMENT)) {
 				Element replacedMethodEle = (Element) node;
-				String name = replacedMethodEle.getAttribute(NAME_ATTRIBUTE);
-				String callback = replacedMethodEle.getAttribute(REPLACER_ATTRIBUTE);
+				String name = replacedMethodEle.getAttribute(NAME_ATTRIBUTE);//name属性，替代的方法名
+				String callback = replacedMethodEle.getAttribute(REPLACER_ATTRIBUTE);//replacer，用哪个类的方法替代
+				// 创建 ReplaceOverride 对象
 				ReplaceOverride replaceOverride = new ReplaceOverride(name, callback);
 				// Look for arg-type match elements.
-				List<Element> argTypeEles = DomUtils.getChildElementsByTagName(replacedMethodEle, ARG_TYPE_ELEMENT);
+				List<Element> argTypeEles = DomUtils.getChildElementsByTagName(replacedMethodEle, ARG_TYPE_ELEMENT);// arg-type 子标签
 				for (Element argTypeEle : argTypeEles) {
-					String match = argTypeEle.getAttribute(ARG_TYPE_MATCH_ATTRIBUTE);
+					String match = argTypeEle.getAttribute(ARG_TYPE_MATCH_ATTRIBUTE);// arg-type 子标签的 match 属性
 					match = (StringUtils.hasText(match) ? match : DomUtils.getTextValue(argTypeEle));
 					if (StringUtils.hasText(match)) {
 						replaceOverride.addTypeIdentifier(match);
 					}
 				}
 				replaceOverride.setSource(extractSource(replacedMethodEle));
+				// 添加到 MethodOverrides 中
 				overrides.addOverride(replaceOverride);
 			}
 		}
