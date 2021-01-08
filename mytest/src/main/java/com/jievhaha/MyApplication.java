@@ -1,14 +1,11 @@
 package com.jievhaha;
 
-import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.*;
 
 public class MyApplication {
 	public static void main(String[] args) {
-		ClassPathResource resource = new ClassPathResource("applicationContext.xml"); // <1>
+		/*ClassPathResource resource = new ClassPathResource("applicationContext.xml"); // <1>
 		DefaultListableBeanFactory factory = new DefaultListableBeanFactory(); // <2>
 		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory); // <3>
 		reader.loadBeanDefinitions(resource);
@@ -30,6 +27,9 @@ public class MyApplication {
 		System.out.println("urlResource1 is UrlResource:" + (urlResource1 instanceof UrlResource));
 
 		Resource urlResource2 = resourceLoader.getResource("http://www.baidu.com");
-		System.out.println("urlResource1 is urlResource:" + (urlResource2 instanceof  UrlResource));
+		System.out.println("urlResource1 is urlResource:" + (urlResource2 instanceof  UrlResource));*/
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+		Hello hello = (Hello) applicationContext.getBean("hello");
+		hello.sayHello();
 	}
 }

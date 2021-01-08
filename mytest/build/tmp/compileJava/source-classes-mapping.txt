@@ -1,4 +1,4 @@
-com/jievhaha/Hello.java
- com.jievhaha.Hello
 com/jievhaha/MyApplication.java
  com.jievhaha.MyApplication
+com/jievhaha/Hello.java
+ com.jievhaha.Hello
