@@ -1,3 +1,7 @@
+com/jievhaha/HelloNameSpaceHandler.java
+ com.jievhaha.HelloNameSpaceHandler
+com/jievhaha/HelloDefinitionParser.java
+ com.jievhaha.HelloDefinitionParser
 com/jievhaha/MyApplication.java
  com.jievhaha.MyApplication
 com/jievhaha/Hello.java

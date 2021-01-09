@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:mytag="http://www.jievhaha.com/schema/hello"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.jievhaha.com/schema/hello http://www.jievhaha.com/schema/hello.xsd">
+
+	<mytag:hello id="hello" name="jievhaha" age="27" address="山西"/>
+</beans>

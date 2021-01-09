@@ -16,16 +16,15 @@
 
 package org.springframework.beans.factory.xml;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.config.BeanDefinitionHolder;
+import org.springframework.lang.Nullable;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
-import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.beans.factory.config.BeanDefinitionHolder;
-import org.springframework.lang.Nullable;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Support class for implementing custom {@link NamespaceHandler NamespaceHandlers}.
@@ -70,7 +69,9 @@ public abstract class NamespaceHandlerSupport implements NamespaceHandler {
 	@Override
 	@Nullable
 	public BeanDefinition parse(Element element, ParserContext parserContext) {
+		// <1> 获得元素对应的 BeanDefinitionParser 对象
 		BeanDefinitionParser parser = findParserForElement(element, parserContext);
+		// <2> 执行解析
 		return (parser != null ? parser.parse(element, parserContext) : null);
 	}
 
@@ -80,7 +81,9 @@ public abstract class NamespaceHandlerSupport implements NamespaceHandler {
 	 */
 	@Nullable
 	private BeanDefinitionParser findParserForElement(Element element, ParserContext parserContext) {
+		// 获得元素名
 		String localName = parserContext.getDelegate().getLocalName(element);
+		// 获得 BeanDefinitionParser 对象
 		BeanDefinitionParser parser = this.parsers.get(localName);
 		if (parser == null) {
 			parserContext.getReaderContext().fatal(
@@ -142,6 +145,8 @@ public abstract class NamespaceHandlerSupport implements NamespaceHandler {
 	 * Subclasses can call this to register the supplied {@link BeanDefinitionDecorator} to
 	 * handle the specified element. The element name is the local (non-namespace qualified)
 	 * name.
+	 * key：元素名，不是命名空间名称
+	 * value：对应 BeanDefinitionParser 的解析器
 	 */
 	protected final void registerBeanDefinitionDecorator(String elementName, BeanDefinitionDecorator dec) {
 		this.decorators.put(elementName, dec);
