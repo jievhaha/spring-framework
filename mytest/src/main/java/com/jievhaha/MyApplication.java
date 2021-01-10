@@ -6,9 +6,15 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MyApplication {
 	public static void main(String[] args) {
 
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("hello.xml");
+		ApplicationContext app = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+		HelloDepend helloDepend = (HelloDepend) app.getBean("hello");
+		System.out.println(helloDepend);
+
+
+		/*ApplicationContext applicationContext = new ClassPathXmlApplicationContext("hello.xml");
 		Hello hello = (Hello) applicationContext.getBean("hello");
-		hello.sayHello();
+		hello.sayHello();*/
 		/*ClassPathResource resource = new ClassPathResource("applicationContext.xml"); // <1>
 		DefaultListableBeanFactory factory = new DefaultListableBeanFactory(); // <2>
 		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory); // <3>
