@@ -20,8 +20,6 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return "Address{" +
-				"detile='" + detile + '\'' +
-				'}';
+		return detile;
 	}
 }

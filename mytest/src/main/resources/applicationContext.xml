@@ -3,11 +3,18 @@
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="hello" class="com.jievhaha.HelloDepend" depends-on="address">
+	<!--<bean id="hello" class="com.jievhaha.HelloDepend" depends-on="address">
 		<constructor-arg name="age" value="27"/>
 		<constructor-arg name="name" value="jievhaha"/>
 		<constructor-arg name="address" ref="address"/>
+	</bean>-->
+	<bean id="hello" class="com.jievhaha.HelloFactory" factory-method="getHello">
+		<constructor-arg name="age" value="30"/>
+		<constructor-arg name="name" value="helloFactory"/>
+		<constructor-arg name="address" ref="address"/>
 	</bean>
+
+
 
 	<bean id="address" class="com.jievhaha.Address">
 		<constructor-arg name="detile" value="山西运城"/>

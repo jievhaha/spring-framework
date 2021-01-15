@@ -40,10 +40,6 @@ public class HelloDepend {
 
 	@Override
 	public String toString() {
-		return "HelloDepend{" +
-				"age='" + age + '\'' +
-				", name='" + name + '\'' +
-				", address=" + address +
-				'}';
+		return "我叫" + name + "，今年" + age + "岁，来自" + address;
 	}
 }

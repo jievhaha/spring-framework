@@ -10,3 +10,5 @@ com/jievhaha/HelloDefinitionParser.java
  com.jievhaha.HelloDefinitionParser
 com/jievhaha/MyApplication.java
  com.jievhaha.MyApplication
+com/jievhaha/HelloFactory.java
+ com.jievhaha.HelloFactory
