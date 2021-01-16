@@ -64,16 +64,31 @@ public class DefaultSingletonBeanRegistry extends SimpleAliasRegistry implements
 
 
 	/** Cache of singleton objects: bean name to bean instance. */
+	/**
+	 * 一级缓存，存放的是单例 bean 的映射。
+	 * 注意，这里的 bean 是已经创建完成的。
+	 * 对应关系为 bean name --> bean instance
+	 */
 	//singletonObjects 就是Spring内部用来存放单例Bean的对象池,key为beanName，value为Bean
 	private final Map<String, Object> singletonObjects = new ConcurrentHashMap<>(256);
 
 	/** Cache of singleton factories: bean name to ObjectFactory. */
 	//singletonFactories 单例工厂的缓存,key为beanName,value 为ObjectFactory
+	/**
+	 * 三级缓存，存放的是 ObjectFactory，可以理解为创建未初始化完的 bean 的 factory ，最终添加到二级缓存 {@link earlySingletonObjects} 中
+	 * 对应关系是 bean name --> ObjectFactory
+	 * 这个 Map 也是【循环依赖】的关键所在。
+	 */
 	private final Map<String, ObjectFactory<?>> singletonFactories = new HashMap<>(16);
 
 	/** Cache of early singleton objects: bean name to bean instance. */
 	// earlySingletonObjects是预加载单例bean缓存,存放的 bean 不一定是完整的
 	// 这个 Map 是【循环依赖】的关键所在。
+	/**
+	 * 二级缓存，存放的是未初始化完的 bean，对应关系也是 bean name --> bean instance。
+	 * 它与 {@link #singletonObjects} 区别在于， 它自己存放的 bean 不一定是完整。
+	 * 这个 Map 也是【循环依赖】的关键所在。
+	 */
 	private final Map<String, Object> earlySingletonObjects = new ConcurrentHashMap<>(16);
 
 	/** Set of registered singletons, containing the bean names in registration order. */
