@@ -14,9 +14,9 @@
 		<constructor-arg name="address" ref="address"/>
 	</bean>
 
-
-
 	<bean id="address" class="com.jievhaha.Address">
 		<constructor-arg name="detile" value="山西运城"/>
 	</bean>
+
+	<bean id="testAware" class="com.jievhaha.TestAware" scope="prototype"></bean>
 </beans>

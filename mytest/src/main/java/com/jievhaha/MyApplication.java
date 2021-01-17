@@ -5,11 +5,20 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MyApplication {
 	public static void main(String[] args) {
+		/*ClassPathResource classPathResource = new ClassPathResource("applicationContext.xml");
+		DefaultListableBeanFactory defaultListableBeanFactory = new DefaultListableBeanFactory();
+		XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(defaultListableBeanFactory);
+		xmlBeanDefinitionReader.loadBeanDefinitions(classPathResource);
+		TestAware testAware = (TestAware) defaultListableBeanFactory.getBean("testAware");
+		testAware.display();*/
 
 		ApplicationContext app = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-		HelloDepend helloDepend = (HelloDepend) app.getBean("hello");
-		System.out.println(helloDepend);
+		TestAware testAware = (TestAware) app.getBean("testAware");
+		testAware.display();
+
+		/*HelloDepend helloDepend = (HelloDepend) app.getBean("hello");
+		System.out.println(helloDepend);*/
 
 
 		/*ApplicationContext applicationContext = new ClassPathXmlApplicationContext("hello.xml");
