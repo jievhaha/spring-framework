@@ -1,8 +1,5 @@
 package com.jievhaha;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 public class MyApplication {
 	public static void main(String[] args) {
 		/*ClassPathResource classPathResource = new ClassPathResource("applicationContext.xml");
@@ -11,21 +8,38 @@ public class MyApplication {
 		xmlBeanDefinitionReader.loadBeanDefinitions(classPathResource);
 		TestAware testAware = (TestAware) defaultListableBeanFactory.getBean("testAware");
 		testAware.display();*/
-
-		/*ApplicationContext app = new ClassPathXmlApplicationContext("applicationContext.xml");
+		/*ApplicationContext app = new ClassPathXmlApplicati
+onContext("applicationContext.xml");
 
 		TestAware testAware = (TestAware) app.getBean("testAware");
 		testAware.display();*/
 
-	/*	ClassPathResource resource = new ClassPathResource("applicationContext.xml");
+		/*ClassPathResource resource = new ClassPathResource("applicationContext.xml");
 		DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
 		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
+		TestBeanPostProcessor beanPostProcessor = new TestBeanPostProcessor();
+		factory.addBeanPostProcessor(beanPostProcessor);
 		reader.loadBeanDefinitions(resource);
 		TestBeanPostProcessor testBeanPostProcessor = (TestBeanPostProcessor) factory.getBean("testBeanPostProcessor");
-*/
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+		testBeanPostProcessor.display();*/
+
+		/*ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 		TestBeanPostProcessor testBeanPostProcessor1 = (TestBeanPostProcessor) applicationContext.getBean("testBeanPostProcessor");
-		testBeanPostProcessor1.display();
+		testBeanPostProcessor1.display();*/
+
+		/*ClassPathResource resource = new ClassPathResource("applicationContext.xml");
+		DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
+		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
+
+		TestBeanPostProcessor beanPostProcessor = new TestBeanPostProcessor();
+		factory.addBeanPostProcessor(beanPostProcessor);
+		reader.loadBeanDefinitions(resource);
+		TestInitializingBean initializingBean = (TestInitializingBean) factory.getBean("testInitializingBean");
+		System.out.println(initializingBean.getName());*/
+
+		/*ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+		TestInitializingBean testInitializingBean = (TestInitializingBean) applicationContext.getBean("testInitializingBean");
+		System.out.println(testInitializingBean.getName());*/
 
 		/*HelloDepend helloDepend = (HelloDepend) app.getBean("hello");
 		System.out.println(helloDepend);*/

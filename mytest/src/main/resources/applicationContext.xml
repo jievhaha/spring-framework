@@ -20,4 +20,7 @@
 
 	<bean id="testAware" class="com.jievhaha.TestAware" scope="prototype"></bean>
 	<bean id="testBeanPostProcessor" class="com.jievhaha.TestBeanPostProcessor"/>
+	<bean id="testInitializingBean" class="com.jievhaha.TestInitializingBean">
+		<property name="name" value="test"/>
+	</bean>
 </beans>

@@ -1,18 +1,20 @@
-com/jievhaha/Hello.java
- com.jievhaha.Hello
 com/jievhaha/HelloDepend.java
  com.jievhaha.HelloDepend
-com/jievhaha/HelloFactory.java
- com.jievhaha.HelloFactory
-com/jievhaha/Address.java
- com.jievhaha.Address
 com/jievhaha/HelloNameSpaceHandler.java
  com.jievhaha.HelloNameSpaceHandler
+com/jievhaha/Address.java
+ com.jievhaha.Address
+com/jievhaha/TestInitializingBean.java
+ com.jievhaha.TestInitializingBean
 com/jievhaha/HelloDefinitionParser.java
  com.jievhaha.HelloDefinitionParser
-com/jievhaha/TestAware.java
- com.jievhaha.TestAware
 com/jievhaha/TestBeanPostProcessor.java
  com.jievhaha.TestBeanPostProcessor
+com/jievhaha/TestAware.java
+ com.jievhaha.TestAware
+com/jievhaha/Hello.java
+ com.jievhaha.Hello
+com/jievhaha/HelloFactory.java
+ com.jievhaha.HelloFactory
 com/jievhaha/MyApplication.java
  com.jievhaha.MyApplication
