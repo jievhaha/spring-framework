@@ -12,10 +12,20 @@ public class MyApplication {
 		TestAware testAware = (TestAware) defaultListableBeanFactory.getBean("testAware");
 		testAware.display();*/
 
-		ApplicationContext app = new ClassPathXmlApplicationContext("applicationContext.xml");
+		/*ApplicationContext app = new ClassPathXmlApplicationContext("applicationContext.xml");
 
 		TestAware testAware = (TestAware) app.getBean("testAware");
-		testAware.display();
+		testAware.display();*/
+
+	/*	ClassPathResource resource = new ClassPathResource("applicationContext.xml");
+		DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
+		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
+		reader.loadBeanDefinitions(resource);
+		TestBeanPostProcessor testBeanPostProcessor = (TestBeanPostProcessor) factory.getBean("testBeanPostProcessor");
+*/
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+		TestBeanPostProcessor testBeanPostProcessor1 = (TestBeanPostProcessor) applicationContext.getBean("testBeanPostProcessor");
+		testBeanPostProcessor1.display();
 
 		/*HelloDepend helloDepend = (HelloDepend) app.getBean("hello");
 		System.out.println(helloDepend);*/

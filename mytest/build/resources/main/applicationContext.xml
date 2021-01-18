@@ -19,4 +19,5 @@
 	</bean>
 
 	<bean id="testAware" class="com.jievhaha.TestAware" scope="prototype"></bean>
+	<bean id="testBeanPostProcessor" class="com.jievhaha.TestBeanPostProcessor"/>
 </beans>

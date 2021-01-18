@@ -12,5 +12,7 @@ com/jievhaha/HelloDefinitionParser.java
  com.jievhaha.HelloDefinitionParser
 com/jievhaha/TestAware.java
  com.jievhaha.TestAware
+com/jievhaha/TestBeanPostProcessor.java
+ com.jievhaha.TestBeanPostProcessor
 com/jievhaha/MyApplication.java
  com.jievhaha.MyApplication
