@@ -1,7 +1,23 @@
 package com.jievhaha;
 
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import org.springframework.core.io.ClassPathResource;
+
 public class MyApplication {
 	public static void main(String[] args) {
+		ClassPathResource resource = new ClassPathResource("applicationContext.xml");
+		DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
+		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
+		LifeCycleBean lifeCycleBean = new LifeCycleBean();
+		// BeanFactory 容器一定要调用该方法进行 BeanPostProcessor 注册
+		factory.addBeanPostProcessor(lifeCycleBean);
+		reader.loadBeanDefinitions(resource);
+		LifeCycleBean lifeCycleBean1 = (LifeCycleBean) factory.getBean("lifeCycle");
+		lifeCycleBean1.display();
+		System.out.println("方法调用完成，容器开始关闭....");
+        // 关闭容器
+		factory.destroySingletons();
 		/*ClassPathResource classPathResource = new ClassPathResource("applicationContext.xml");
 		DefaultListableBeanFactory defaultListableBeanFactory = new DefaultListableBeanFactory();
 		XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(defaultListableBeanFactory);

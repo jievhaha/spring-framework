@@ -23,4 +23,7 @@
 	<bean id="testInitializingBean" class="com.jievhaha.TestInitializingBean">
 		<property name="name" value="test"/>
 	</bean>
+	<bean id="lifeCycle" class="com.jievhaha.LifeCycleBean" init-method="initMethod" destroy-method="destroyMethod">
+		<property name="test" value="test"/>
+	</bean>
 </beans>

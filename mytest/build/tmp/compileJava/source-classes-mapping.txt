@@ -16,5 +16,7 @@ com/jievhaha/Hello.java
  com.jievhaha.Hello
 com/jievhaha/HelloFactory.java
  com.jievhaha.HelloFactory
+com/jievhaha/LifeCycleBean.java
+ com.jievhaha.LifeCycleBean
 com/jievhaha/MyApplication.java
  com.jievhaha.MyApplication
