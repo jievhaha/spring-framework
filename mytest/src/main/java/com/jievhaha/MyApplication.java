@@ -1,12 +1,14 @@
 package com.jievhaha;
 
-import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MyApplication {
 	public static void main(String[] args) {
-		ClassPathResource resource = new ClassPathResource("applicationContext.xml");
+		ApplicationContext app = new ClassPathXmlApplicationContext("applicationContext.xml");
+		Address address = (Address) app.getBean("address");
+		System.out.println(address.getDetile());
+		/*ClassPathResource resource = new ClassPathResource("applicationContext.xml");
 		DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
 		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
 		LifeCycleBean lifeCycleBean = new LifeCycleBean();
@@ -17,7 +19,7 @@ public class MyApplication {
 		lifeCycleBean1.display();
 		System.out.println("方法调用完成，容器开始关闭....");
         // 关闭容器
-		factory.destroySingletons();
+		factory.destroySingletons();*/
 		/*ClassPathResource classPathResource = new ClassPathResource("applicationContext.xml");
 		DefaultListableBeanFactory defaultListableBeanFactory = new DefaultListableBeanFactory();
 		XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(defaultListableBeanFactory);

@@ -19,11 +19,13 @@
 	</bean>
 
 	<bean id="testAware" class="com.jievhaha.TestAware" scope="prototype"></bean>
-	<bean id="testBeanPostProcessor" class="com.jievhaha.TestBeanPostProcessor"/>
+	<!--<bean id="testBeanPostProcessor" class="com.jievhaha.TestBeanPostProcessor"/>
 	<bean id="testInitializingBean" class="com.jievhaha.TestInitializingBean">
 		<property name="name" value="test"/>
-	</bean>
-	<bean id="lifeCycle" class="com.jievhaha.LifeCycleBean" init-method="initMethod" destroy-method="destroyMethod">
+	</bean>-->
+	<!--<bean id="lifeCycle" class="com.jievhaha.LifeCycleBean" init-method="initMethod" destroy-method="destroyMethod">
 		<property name="test" value="test"/>
-	</bean>
+	</bean>-->
+	<bean class="com.jievhaha.TestBeanFactoryPostProcessor"/>
+	<bean class="com.jievhaha.TestBeanFactoryPostProcessor1"/>
 </beans>

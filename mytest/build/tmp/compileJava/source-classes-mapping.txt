@@ -18,5 +18,9 @@ com/jievhaha/HelloFactory.java
  com.jievhaha.HelloFactory
 com/jievhaha/LifeCycleBean.java
  com.jievhaha.LifeCycleBean
+com/jievhaha/TestBeanFactoryPostProcessor.java
+ com.jievhaha.TestBeanFactoryPostProcessor
 com/jievhaha/MyApplication.java
  com.jievhaha.MyApplication
+com/jievhaha/TestBeanFactoryPostProcessor1.java
+ com.jievhaha.TestBeanFactoryPostProcessor1
