@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="propertyPlaceholderConfigurer" class="com.PropertyPlaceholderConfigurer.CustomPropertyConfig">
+		<property name="locations">
+			<list>
+				<value>classpath:config/application-dev.properties</value>
+				<value>classpath:config/application-test.properties</value>
+				<value>classpath:config/application-prod.properties</value>
+			</list>
+		</property>
+	</bean>
+	<!--在 idea 的 VM options 里面增加 -Dspring.profiles.active=dev，标志当前环境为 dev 环境。或者其他环境
+	其实就是springboot里的spring.profiles.active-->
+	<bean id="test" class="com.PropertyPlaceholderConfigurer.Test">
+		<property name="name" value="${student.name}"/>
+	</bean>
+</beans>
