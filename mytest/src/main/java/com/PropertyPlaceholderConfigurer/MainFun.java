@@ -5,7 +5,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainFun {
 	public static void main(String[] args) {
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext-property.xml");
+		/*ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext-property.xml");
+		Test test = (Test) applicationContext.getBean("test");
+		System.out.println(test.getName());*/
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application-propertyOverride.xml");
 		Test test = (Test) applicationContext.getBean("test");
 		System.out.println(test.getName());
 	}

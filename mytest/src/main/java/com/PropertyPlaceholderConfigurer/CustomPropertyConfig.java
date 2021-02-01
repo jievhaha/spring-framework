@@ -1,3 +1,4 @@
+/*
 package com.PropertyPlaceholderConfigurer;
 
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
@@ -22,11 +23,13 @@ public class CustomPropertyConfig extends PropertyPlaceholderConfigurer {
 		this.locations = locations;
 	}
 
-	/**
+	*/
+/**
 	 * 重写该方法，根据启动参数，动态读取配置文件
 	 * @param props the Properties instance to load into
 	 * @throws IOException
-	 */
+	 *//*
+
 	@Override
 	protected void loadProperties(Properties props) throws IOException {
 		if(locations != null){
@@ -52,3 +55,4 @@ public class CustomPropertyConfig extends PropertyPlaceholderConfigurer {
 		}
 	}
 }
+*/
