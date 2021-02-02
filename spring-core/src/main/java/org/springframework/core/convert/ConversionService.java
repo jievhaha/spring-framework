@@ -80,9 +80,12 @@ public interface ConversionService {
 	 * The TypeDescriptors provide additional context about the source and target locations
 	 * where conversion will occur, often object fields or property locations.
 	 * @param source the source object to convert (may be {@code null})
+	 *               要转换的源对象，可以为 null 。
 	 * @param sourceType context about the source type to convert from
 	 * (may be {@code null} if source is {@code null})
+	 *                   source 的类型的上下文，如果 source 为 null ，则可以为 null 。
 	 * @param targetType context about the target type to convert to (required)
+	 *                   source 的类型的上下文，如果 source 为 null ，则可以为 null 。
 	 * @return the converted object, an instance of {@link TypeDescriptor#getObjectType() targetType}
 	 * @throws ConversionException if a conversion exception occurred
 	 * @throws IllegalArgumentException if targetType is {@code null},
