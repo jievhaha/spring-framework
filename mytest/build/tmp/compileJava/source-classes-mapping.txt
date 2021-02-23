@@ -1,11 +1,11 @@
 com/jievhaha/HelloDepend.java
  com.jievhaha.HelloDepend
-com/jievhaha/HelloNameSpaceHandler.java
- com.jievhaha.HelloNameSpaceHandler
+com/jievhaha/TestInitializingBean.java
+ com.jievhaha.TestInitializingBean
 com/jievhaha/TestBeanPostProcessor.java
  com.jievhaha.TestBeanPostProcessor
-com/jievhaha/TestBeanFactoryPostProcessor1.java
- com.jievhaha.TestBeanFactoryPostProcessor1
+com/jievhaha/TestAware.java
+ com.jievhaha.TestAware
 com/PropertyPlaceholderConfigurer/Test.java
  com.PropertyPlaceholderConfigurer.Test
 com/jievhaha/HelloFactory.java
@@ -14,17 +14,25 @@ com/jievhaha/LifeCycleBean.java
  com.jievhaha.LifeCycleBean
 com/jievhaha/Address.java
  com.jievhaha.Address
-com/jievhaha/TestBeanFactoryPostProcessor.java
- com.jievhaha.TestBeanFactoryPostProcessor
-com/jievhaha/TestInitializingBean.java
- com.jievhaha.TestInitializingBean
-com/jievhaha/HelloDefinitionParser.java
- com.jievhaha.HelloDefinitionParser
-com/jievhaha/TestAware.java
- com.jievhaha.TestAware
-com/jievhaha/MyApplication.java
- com.jievhaha.MyApplication
 com/jievhaha/Hello.java
  com.jievhaha.Hello
+com/jievhaha/HelloNameSpaceHandler.java
+ com.jievhaha.HelloNameSpaceHandler
+com/jievhaha/TestBeanFactoryPostProcessor.java
+ com.jievhaha.TestBeanFactoryPostProcessor
+com/jievhaha/HelloDefinitionParser.java
+ com.jievhaha.HelloDefinitionParser
+com/conversiontest/ConversionTest.java
+ com.conversiontest.ConversionTest
 com/PropertyPlaceholderConfigurer/MainFun.java
  com.PropertyPlaceholderConfigurer.MainFun
+com/jievhaha/TestBeanFactoryPostProcessor1.java
+ com.jievhaha.TestBeanFactoryPostProcessor1
+com/jievhaha/MyApplication.java
+ com.jievhaha.MyApplication
+com/conversiontest/People.java
+ com.conversiontest.People
+com/conversiontest/PeopleService.java
+ com.conversiontest.PeopleService
+com/conversiontest/PeopleConversionService.java
+ com.conversiontest.PeopleConversionService
